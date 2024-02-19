@@ -29,7 +29,7 @@
         <a href="#work">My Work</a>
         <a href="#aboutMe">About Me</a>
     </div>
-    <div class="bottomNavbar" id="bottomNavbar">
+    <div class="bottomNavbar">
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-12">
@@ -68,46 +68,53 @@
         <br>
         <hr>
 
-        <!-- Photo Grid -->
+
         <div class="container text-center">
             <div class="row">
-                <div>
-                    <h1>My Work</h1>
-                </div>
-                <div class="column">
-                    <button onclick="document.location='PersonalWork.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
-                    </button>
-                    <button onclick="document.location='CommissionWork.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='PersonalWork.html'">
+                        <img src="SideOrderSmol.png"
+                            alt="Smol Cover"> <span>Personal Work</span>
                     </button>
                 </div>
-                <div class="column">
-                    <button onclick="document.location='ArtAssignments.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
-                    </button>
-                    <button onclick="document.location='Animation.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='CommissionWork.html'">
+                        <img src="FursonaPeekerYCHCommissionOutlined.png"
+                            alt="YCH Cover"> <span>Commission Work</span>
                     </button>
                 </div>
-                <div class="column">
-                    <button onclick="document.location='WebDev.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
-                    </button>
-                </div>
-                <div class="column">
-                    <button onclick="document.location='GameDev.html'">
-                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
-                            alt="toothless">
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='ArtAssignments.html'">
+                        <img src="LegendsArceus.png"
+                            alt="Legends Cover"> <span>Art Assignments</span>
                     </button>
                 </div>
             </div>
         </div>
+        <br>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='Animation.html'">
+                        <img src="Dorito.png"
+                            alt="Dorito Cover"> <span>Animation</span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='WebDev.html'">
+                        <img src="https://media1.tenor.com/m/BAzma6OlbvAAAAAd/dancing-toothless-tothless.gif"
+                            alt="toothless"> <span>Web Dev</span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="homeButtons" onclick="document.location='GameDev.html'">
+                        <img src="Quinn.PNG"
+                            alt="Quinn Cover"> <span>Game Dev</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <hr>
         <br>
         <div id="aboutMe" class="container text-center">
@@ -126,23 +133,21 @@
             </div>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
+          
 
 
         </div>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
             }
-        </script>
+        }
+    </script>
 
 </body>
 

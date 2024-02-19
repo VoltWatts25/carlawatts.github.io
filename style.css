@@ -58,6 +58,47 @@ img {
 
 /* buttons */
 
+.homeButtons{
+  display: inline-block;
+  color:#540804;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Amarante';
+  border-radius: 4px;
+  background-color:#e9c09a;
+  border-color: #C75146;
+  border-width: 8px;
+  width: 300px;
+  height: 270px;
+
+}
+
+.homeButtons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.homeButtons span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.homeButtons:hover span {
+  padding-right: 25px;
+}
+
+.homeButtons:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* socials buttons */
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -67,7 +108,7 @@ img {
   text-align: center;
   font-size: 14px;
   font-family: 'Amarante';
-  padding: 15px;
+  padding: 10px;
   width: 130px;
   transition: all 0.5s;
   cursor: pointer;
@@ -98,18 +139,6 @@ img {
 .button:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-.photoButton {
-  border-radius: 20px;
-  background-color: #ffdab9;
-  border: none;
-  text-align: center;
-  font-family: 'Amarante';
-  padding: 20px;
-  width: 500px;
-  cursor: pointer;
-  margin: 20px;
 }
 
 
@@ -217,6 +246,11 @@ bottom Navbar */
     height: auto;
   }
 
+  .imgSmaller{
+    width: 70%;
+    height: auto;
+  }
+
   body {
     background-image: url('https://i.makeagif.com/media/1-26-2016/eT64oD.gif');
   }
@@ -294,6 +328,17 @@ bottom Navbar */
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.imgBorder {
+  border: double;
+  border-width: 10px;
+  border-color: #AD2E24;
+  background-color:rgb(232, 200, 157);
+}
+
+.videoWidth{
+  width: 500px;
 }
 
 /* 100% Image Width on Smaller Screens */
