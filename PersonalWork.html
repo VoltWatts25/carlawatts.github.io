@@ -52,35 +52,40 @@
 
         <div class="container text-center">
             <h1>Personal Work</h1>
+            <p>These were all made just for fun or for ArtFight (2022-2024)</p>
         </div>
         <hr>
 
         <!-- Photo Grid -->
         <div class="row">
             <div class="column">
-                <img id="myImg" class="imgBorder" src="KirbyMassAttack.png" alt="ArtFight Kirby Mass Attack">
+                <img class="imgBorder myImg" src="KirbyMassAttack.png" alt="ArtFight Kirby Mass Attack">
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="img01">
+                    <img class="modal-content" id="img">
                     <div id="caption"></div>
                 </div>
-                <img id="myImg" class="imgBorder" src="CherieBlossomAttack.png" alt="ArtFight Cherie Blossom Attack">
+                <img class="imgBorder myImg" src="CherieBlossomAttack.png" alt="ArtFight Cherie Blossom Attack">
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="img02">
+                    <img class="modal-content" id="img">
                     <div id="caption"></div>
                 </div>
                 <img class="imgBorder" src="SideOrderSmol.png">
                 <img class="imgBorder" src="SideOrderPearl.png">
                 <img class="imgBorder" src="SodaAttack.png">
+                <img class="imgBorder" src="SmolWithSword.PNG">
+                
             </div>
             <div class="column">
                 <img class="imgBorder" src="VoltPopsicle.png">
                 <img class="imgBorder" src="NallorRef.png">
                 <img class="imgBorder" src="Correy ref.png">
                 <img class="imgBorder" src="WeGottaKillThisGuyPearl.png">
+                <img class="imgBorder" src="SplatoonShiver.png">
+                <img class="imgBorder" src="Mo Ref.png">
             </div>
         </div>
 
@@ -102,9 +107,9 @@
         var modal = document.getElementById("myModal");
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
+        var img = document.getElementsByClassName("myImg");
+        // var modalImg = document.getElementsByClassName("img");
+        // var captionText = document.getElementsByClassName("caption");
         img.onclick = function () {
             modal.style.display = "block";
             modalImg.src = this.src;

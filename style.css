@@ -156,6 +156,7 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 20;
 }
 
 .topnav a {
@@ -190,6 +191,7 @@ bottom Navbar */
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 20;
 }
 
 
@@ -257,7 +259,7 @@ bottom Navbar */
 }
 
 
-#myImg:hover {opacity: 0.7;}
+.myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
