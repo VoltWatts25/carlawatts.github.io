@@ -1,0 +1,69 @@
+<!doctype html>
+
+<head>
+    <!--Responsive-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Collage-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--StyleSheet-->
+    <link rel="styleSheet" href="FinalStyleSheet.css">
+    <!--Start of react.js libraries-->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- react.js file-->
+    <script src='React/FinalReactTable.js' type='text/babel'></script>
+</head>
+
+<body>
+
+
+
+    <div id="champPageDiv" class="mobileChampPageDiv" class="container text-center">
+        <div class="row">
+
+
+            <div class="col-md-4"> <button class="button" onclick="document.location='SplatfestPoints.html'"><i
+                        class="fa-solid fa-paint-roller"></i>Splatfest Final
+                    Scores</button></div>
+
+            <div class="col-md-4">
+                <button class="button" onclick="document.location='ChangesPerUpdate.html'"><i
+                        class="fa-solid fa-gear"></i>Changes Per Update (1.1.0 - 4.1.0)</button>
+            </div>
+
+
+            <div class="col-md-4">
+                <button class="button" onclick="document.location='FinalHomePage.html'"><i
+                        class="fa-solid fa-house"></i>Home
+                    Page</button>
+            </div>
+
+        </div>
+        <br>
+
+    </div>
+    </div>
+
+    <div id="champPageDiv" class="mobileChampPageDiv" class="row">
+        <h1 id="h1Mobile">Splatoon 3's Championship Teams Total Wins</h1>
+        <p>This graph and table show how many wins each of these ten teams have won in four of the first few Splatoon 3 Championships held.</p>
+        <div class="col-12">
+
+
+            <div id="SplatChampTable"></div>
+            <script>
+
+            </script>
+        </div>
+    </div>
+
+    <div id="champPageDiv" class="flourish-embed flourish-bar-chart-race" data-src="visualisation/15914536">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+
+</body>

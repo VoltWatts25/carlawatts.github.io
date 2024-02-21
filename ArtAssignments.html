@@ -59,14 +59,50 @@
         <!-- Photo Grid -->
         <div class="row">
             <div class="column">
-                <img class="imgBorder" src="WorkFromHome.png" alt="Work From Home Assignments">
-                <img class="imgBorder" src="Bugs.png" alt="Fear of Bugs">
-                <img class="imgBorder" src="Paw Skull2.0.png" alt="Logo Design">
+                <img class="imgBorder" src="Images/WorkFromHome.png" alt="Work From Home Assignments">
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
+                <img class="imgBorder" src="Images/Bugs.png" alt="Fear of Bugs">
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
+                <img class="imgBorder" src="Images/Paw Skull2.0.png" alt="Logo Design">
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
             </div>
             <div class="column">
-                <img class="imgBorder" src="WattsBackground.png" alt="Background Assignment">
-                <img class="imgBorder" src="LegendsArceus.png" alt="Semi Realism Legends Arceus">
-                <img class="imgBorder" src="Dorito.png" alt="Dorito Logo">
+                <img class="imgBorder" src="Images/WattsBackground.png" alt="Background Assignment">
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
+                <img class="imgBorder" src="Images/LegendsArceus.png" alt="Semi Realism Legends Arceus">
+                  <!-- The Modal -->
+                  <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
+                <img class="imgBorder" src="Images/Dorito.png" alt="Dorito Logo">
+                   <!-- The Modal -->
+                   <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
             </div>
         </div>
 
@@ -83,6 +119,28 @@
                 x.className = "topnav";
             }
         }
+
+        
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            let imgs = document.getElementsByClassName("imgBorder"),
+                modals = document.getElementsByClassName("modal"),
+                modalImgs = document.getElementsByClassName("modal-content"),
+                captionTexts = document.getElementsByClassName("caption");
+            for (let x = 0; x < imgs.length; x++) {
+                imgs[x].onclick = function () {
+                    console.log(this);
+                    modals[x].style.display = "block";
+                    modalImgs[x].src = this.src;
+                    captionTexts[x].innerHTML = this.alt;
+
+                    let closeSpans = document.getElementsByClassName("close");
+
+                    // When the user clicks on <span> (x), close the modal
+                    closeSpans[x].onclick = function () {
+                        modals[x].style.display = "none";
+                    }
+                }
+            };
     </script>
 
 </body>

@@ -59,16 +59,28 @@
         </div>
         <hr>
         <video class="videoWidth" controls>
-            <source src="GameTrailer.mp4" type="video/mp4">
+            <source src="Images/GameTrailer.mp4" type="video/mp4" alt="Game Trailer">
         </video>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <img class="imgBorder" src="Level1.png">
+                <img class="imgBorder" src="Images/Level1.png" alt="Level 1 Layout">
+                   <!-- The Modal -->
+                   <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
                 <br>
             </div>
             <div class="col-md-6">
-                <img class="imgBorder" src="Level2.png">
+                <img class="imgBorder" src="Images/Level2.png" alt="Level 2 Layout">
+                   <!-- The Modal -->
+                   <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content">
+                    <div class="caption"></div>
+                </div>
             </div>
         </div>
         <br>
@@ -82,6 +94,28 @@
                     x.className = "topnav";
                 }
             }
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            let imgs = document.getElementsByClassName("imgBorder"),
+                modals = document.getElementsByClassName("modal"),
+                modalImgs = document.getElementsByClassName("modal-content"),
+                captionTexts = document.getElementsByClassName("caption");
+            for (let x = 0; x < imgs.length; x++) {
+                imgs[x].onclick = function () {
+                    console.log(this);
+                    modals[x].style.display = "block";
+                    modalImgs[x].src = this.src;
+                    captionTexts[x].innerHTML = this.alt;
+
+                    let closeSpans = document.getElementsByClassName("close");
+
+                    // When the user clicks on <span> (x), close the modal
+                    closeSpans[x].onclick = function () {
+                        modals[x].style.display = "none";
+                    }
+                }
+            }
+
         </script>
 
 </body>

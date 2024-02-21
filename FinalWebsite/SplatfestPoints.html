@@ -1,0 +1,354 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+
+
+
+<head>
+  <!--Responsive-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Collage-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--StyleSheet-->
+  <link rel="styleSheet" href="FinalStyleSheet.css">
+  <meta charset="utf-8">
+
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="idolDance" id="dancinGuys" src="https://i.redd.it/71ibeezrngq91.gif" alt="Cat Dance Shiver">
+
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <div class="col-md-4">
+        <img class="idolDance" id="dancinGuys"
+          src="https://preview.redd.it/cjvn6e2sngq91.gif?width=640&crop=smart&auto=webp&s=f40bfef17e0276421d8b283adad520ecae3c6e37"
+          alt="Cat Dance Frye">
+
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <div class="col-md-4">
+        <img class="idolDance" id="dancinGuys" src="https://i.redd.it/2adavz0sngq91.gif" alt="Cat Dance Big Man">
+
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="splatfestPageDiv" class="mobileSplatfestPageDiv" class="container text-center">
+    <div class="row">
+
+      <div class="col-md-4">
+        <button class="button" onclick="document.location='ChangesPerUpdate.html'"><i
+            class="fa-solid fa-gear"></i>Changes
+          Per Update (1.1.0 - 4.1.0)</button>
+      </div>
+
+      <div class="col-md-4">
+        <button class="button" onclick="document.location='SplatChampWins.html'"><i
+            class="fa-solid fa-trophy"></i>Splatoon 3 Championship Total
+          Wins</button>
+      </div>
+
+      <div class="col-md-4">
+        <button class="button" onclick="document.location='FinalHomePage.html'"><i class="fa-solid fa-house"></i>Home
+          Page</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="splatfestPageDiv" class="mobileDataviz-container mobileSplatfestPageDiv">
+    <h1 id="h1Mobile">First Year of Splatoon 3's Splatfests</h1>
+    <p>This graph represents the amount of points each team has gotten from the first ten splatfests.</p>
+    <!-- Create a div where the graph will take place -->
+    <div class="" id="my_dataviz"></div>
+  </div>
+  <script>
+
+    // set the dimensions and margins of the graph
+    var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+      width = 435 - margin.left - margin.right,
+      height = 1500 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+    // read json data
+
+    let data = {
+      "children": [
+        {
+          "name": "Rock vs Paper vs Scissors",
+          "children": [
+            {
+              "name": "Shiver: Rock",
+              "group": "Shiver",
+              "value": 25,
+            },
+            {
+              "name": "Frye: Paper",
+              "group": "Frye",
+              "value": 10,
+            },
+          ],
+        },
+
+        {
+          "name": "Gear vs Grub vs Fun",
+          "children": [
+            {
+              "name": "Shiver: Gear",
+              "group": "Shiver",
+              "value": 25,
+            },
+            {
+              "name": "Big Man: Fun",
+              "group": "Big Man",
+              "value": 20,
+            }
+          ],
+        },
+
+        {
+          "name": "Grass vs Fire vs Water",
+          "children": [
+            {
+              "name": "Big Man: Water",
+              "group": "Big Man",
+              "value": 45,
+            }
+          ],
+        },
+
+        {
+          "name": "Spicy vs Sweet vs Sour",
+          "children": [
+            {
+              "name": "Shiver: Spicy",
+              "group": "Shiver",
+              "value": 15,
+            },
+            {
+              "name": "Frye: Sweet",
+              "group": "Frye",
+              "value": 30,
+            },
+            {
+              "name": "Big Man: Sour",
+              "group": "Big Man",
+              "value": 12,
+            },
+          ],
+        },
+
+        {
+          "name": "Dark vs Milk vs White",
+          "children": [
+            {
+              "name": "Big Man: White Chocolate",
+              "group": "Big Man",
+              "value": 57,
+            },
+          ],
+        },
+
+        {
+          "name": "Nessie vs Aliens vs Bigfoot",
+          "children": [
+            {
+              "name": "Shiver: Nessie",
+              "group": "Shiver",
+              "value": 30,
+            },
+            {
+              "name": "Frye: Alien",
+              "group": "Frye",
+              "value": 15,
+            },
+            {
+              "name": "Big Man: Bigfoot",
+              "group": "Big Man",
+              "value": 12,
+            },
+          ],
+        },
+
+        {
+          "name": "Power vs Wisdom vs Courage",
+          "children": [
+            {
+              "name": "Shiver: Power",
+              "group": "Shiver",
+              "value": 57,
+            },
+          ],
+        },
+
+        {
+          "name": "Vanilla vs Strawberry vs Mint Chip",
+          "children": [
+            {
+              "name": "Shiver: Vanilla",
+              "group": "Shiver",
+              "value": 45,
+            },
+            {
+              "name": "Big Man: Mint Chip",
+              "group": "Big Man",
+              "value": 12,
+            },
+          ],
+        },
+
+        {
+          "name": "Money vs Fame vs Love",
+          "children": [
+            {
+              "name": "Shiver: Money",
+              "group": "Shiver",
+              "value": 33,
+            },
+            {
+              "name": "Frye: Fame",
+              "group": "Frye",
+              "value": 12,
+            },
+            {
+              "name": "Big Man: Love",
+              "group": "Big Man",
+              "value": 12,
+            },
+          ],
+        },
+
+        {
+          "name": "Shiver vs Frye vs Big Man",
+          "children": [
+            {
+              "name": "Shiver",
+              "group": "Shiver",
+              "value": 38,
+            },
+            {
+              "name": "Frye",
+              "group": "Frye",
+              "value": 7,
+            },
+            {
+              "name": "Big Man",
+              "group": "Big Man",
+              "value": 12,
+            },
+          ],
+        },
+      ],
+      "name": "Splatfests"
+    };
+
+    // Give the data to this cluster layout:
+    var root = d3.hierarchy(data).sum(function (d) { return d.value }) // Here the size of each leave is given in the 'value' field in input data
+
+    // Then d3.treemap computes the position of each element of the hierarchy
+    d3.treemap()
+      .size([width, height])
+      .paddingTop(40)
+      .paddingRight(15)
+      .paddingInner(3)      // Padding between each rectangle
+      //.paddingOuter(6)
+      //.padding(20)
+      (root)
+
+    // prepare a color scale
+    var color = d3.scaleOrdinal()
+      .domain(["boss1", "boss2", "boss3"])
+      .range(["#402D54", "#D18975", "#8FD175"])
+
+    // And an opacity scale
+    var opacity = d3.scaleLinear()
+      .domain([10, 30])
+      .range([.5, 1])
+
+    // use this information to add rectangles:
+    svg
+      .selectAll("rect")
+      .data(root.leaves())
+      .enter()
+      .append("rect")
+      .attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .style("stroke", "black")
+      .style("fill", function (d) { return color(d.parent.data.name) })
+      .style("opacity", function (d) { return opacity(d.data.value) })
+
+    // and to add the text labels
+    svg
+      .selectAll("text")
+      .data(root.leaves())
+      .enter()
+      .append("text")
+      .attr("x", function (d) { return d.x0 + 5 })    // +10 to adjust position (more right)
+      .attr("y", function (d) { return d.y0 + 20 })    // +20 to adjust position (lower)
+      .text(function (d) { return d.data.name.replace('mister_', '') })
+      .attr("font-size", "12px")
+      .attr("fill", "white")
+
+    // and to add the text labels
+    svg
+      .selectAll("vals")
+      .data(root.leaves())
+      .enter()
+      .append("text")
+      .attr("x", function (d) { return d.x0 + 10 })    // +10 to adjust position (more right)
+      .attr("y", function (d) { return d.y0 + 37 })    // +20 to adjust position (lower)
+      .text(function (d) { return d.data.value })
+      .attr("font-size", "14px")
+      .attr("fill", "white")
+
+    // Add title for the 3 groups
+    svg
+      .selectAll("titles")
+      .data(root.descendants().filter(function (d) { return d.depth == 1 }))
+      .enter()
+      .append("text")
+      .attr("x", function (d) { return d.x0 })
+      .attr("y", function (d) { return d.y0 + 21 })
+      .text(function (d) { return d.data.name })
+      .attr("font-size", "13px")
+      .attr("fill", function (d) { return color(d.data.name) })
+
+
+
+  </script>
+</body>

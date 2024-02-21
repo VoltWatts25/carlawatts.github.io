@@ -1,0 +1,296 @@
+/* All CSS used-
+Font-size
+Text-align
+Font-family
+Color
+Opacity
+margin
+width
+height
+Padding
+Border
+Background-color
+Overflow-x
+Animation
+Display
+Position
+Left
+Transform
+Border-radius
+Box-shadow
+Cursor
+Outline
+background-image
+animation-duration
+right
+animation-delay
+border-style
+font-variant
+text-shadow
+text-decoration
+font-weight*/
+
+
+
+@media (min-width: 680px) {
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgb(86, 77, 85);
+        font-family: "Courier, monospace";
+        color: #070313;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 25px;
+        text-align: center;
+        font-family: "Courier, monospace";
+        color: #070313;
+        opacity: 0.7;
+    }
+
+    h3 {
+        font-size: 25px;
+        text-align: center;
+        font-family: "Courier, monospace";
+        color: #22105d;
+    }
+
+    #titleImages {
+        margin: auto;
+        width: 450px;
+        height: 250px;
+    }
+
+    #video {
+        margin: auto;
+        width: 450px;
+        height: 250px;
+    }
+
+    #champPageDiv {
+        margin: auto;
+        width: 80%;
+        padding: 20px;
+        border: 30px outset #302650;
+        border-style: double;
+        background-color: #e4e4e4;
+        text-align: center;
+    }
+
+    #updatePageDiv {
+        margin: auto;
+        width: 80%;
+        padding: 20px;
+        border: 30px outset #302650;
+        border-style: double;
+        background-color: rgb(249, 254, 255);
+        text-align: center;
+    }
+
+    #splatfestPageDiv {
+        margin: auto;
+        width: 80%;
+        padding: 20px;
+        border: 30px outset #382673;
+        border-style: double;
+        background-color: rgb(249, 255, 255);
+        text-align: center;
+    }
+
+    .titleDiv {
+        margin: auto;
+        width: 80%;
+        padding: 20px;
+        border: 30px outset #281760;
+        border-style: double;
+        background-color: cornsilk;
+        text-align: center;
+    }
+
+    .dataviz-container {
+        overflow-x: auto
+    }
+
+
+
+}
+
+
+.idolDance {
+    animation: idolDance 10s ease-in;
+    animation-duration: infinite;
+    animation-delay: 3s;
+    display: inline-block;
+    position: absolute;
+}
+
+@keyframes idolDance {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.salmonSwim {
+    animation: salmonSwim 10s ease-in infinite;
+    display: inline-block;
+
+}
+
+@keyframes salmonSwim {
+    0% {
+        left: 0%;
+    }
+
+    25% {
+        left: 15%;
+        transform: scaleX(-1);
+    }
+
+    75% {
+        right: 15%;
+        transform: scaleX(1);
+    }
+
+    100% {
+        right: 30%;
+
+    }
+}
+
+#salmonSmall {
+    width: 160px;
+    height: 160px;
+}
+
+
+.button {
+    padding: 5px 5px;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #c0b6ea;
+    background-color: #22105d;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #6a6a6a;
+}
+
+.button:hover {
+    background-color: #180b41;
+    text-decoration: underline;
+
+}
+
+.button:active {
+    background-color: #180b41;
+    box-shadow: 0 5px rgb(61, 61, 61);
+    transform: translateY(4px);
+}
+
+
+.titleImagesMobile {
+    margin: auto;
+    width: 360px;
+    height: 200px;
+}
+
+#dancinGuys {
+    margin: auto;
+    width: 90px;
+    height: 90px;
+}
+
+.videoMobile {
+    margin: auto;
+    width: 320px;
+    height: 170px;
+}
+
+#h1Mobile {
+    font-family: "Courier, monospace";
+    color: #070313;
+    text-shadow: 2px 2px 4px rgb(126, 124, 126);
+    font-weight: bold;
+}
+
+#h2Mobile {
+    font-family: "Courier, monospace";
+    color: #070313;
+    opacity: 0.7;
+}
+
+#h3Mobile {
+    font-family: "Courier, monospace";
+    color: #22105d;
+}
+
+
+#mobileTitleDiv {
+    margin: auto;
+
+    padding: 20px;
+    border: 30px outset #281760;
+    border-style: double;
+    background-color: cornsilk;
+    text-align: center;
+}
+
+
+body {
+    background-image: url('https://fs-prod-cdn.nintendo-europe.com/media/images/08_content_images/games_6/nintendo_switch_7/nswitch_splatoon2_v2/CI_NSwitch_Splatoon2_DLC_Background_02.png');
+}
+
+p {
+    color: #22105d;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    font-variant: small-caps;
+}
+
+.mobileChampPageDiv {
+    margin: auto;
+    padding: 20px;
+    border: 30 outset #302650;
+    border: 25px outset #302650;
+    border-style: double;
+    background-color: #e4e4e4;
+    text-align: center;
+}
+
+.mobileUpdatePageDiv {
+    margin: auto;
+
+    padding: 20px;
+    border: 30px outset #302650;
+        border-style: double;
+        background-color: rgb(249, 254, 255);
+    text-align: center;
+}
+
+.mobileSplatfestPageDiv {
+    margin: auto;
+
+    padding: 20px;
+    border: 30 outset #382673;
+    border: 25px outset #382673;
+    border-style: double;
+    background-color: rgb(249, 255, 255);
+    text-align: center;
+}
+
+
+#mobileDataviz-container {
+    overflow-x: auto
+}
