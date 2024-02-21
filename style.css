@@ -258,9 +258,6 @@ bottom Navbar */
   }
 }
 
-
-.myImg:hover {opacity: 0.7;}
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -338,6 +335,8 @@ bottom Navbar */
   border-color: #AD2E24;
   background-color:rgb(232, 200, 157);
 }
+
+.imgBorder:hover {opacity: 0.7; cursor: pointer}
 
 .videoWidth{
   width: 500px;
