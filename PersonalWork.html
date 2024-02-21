@@ -59,25 +59,25 @@
         <!-- Photo Grid -->
         <div class="row">
             <div class="column">
-                <img class="imgBorder myImg" src="KirbyMassAttack.png" alt="ArtFight Kirby Mass Attack">
+                <img class="imgBorder" src="KirbyMassAttack.png" alt="ArtFight Kirby Mass Attack">
                 <!-- The Modal -->
-                <div id="myModal" class="modal">
+                <div class="modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="img">
-                    <div id="caption"></div>
+                    <img class="modal-content">
+                    <div class="caption"></div>
                 </div>
-                <img class="imgBorder myImg" src="CherieBlossomAttack.png" alt="ArtFight Cherie Blossom Attack">
+                <img class="imgBorder" src="CherieBlossomAttack.png" alt="ArtFight Cherie Blossom Attack">
                 <!-- The Modal -->
-                <div id="myModal" class="modal">
+                <div class="modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="img">
-                    <div id="caption"></div>
+                    <img class="modal-content">
+                    <div class="caption"></div>
                 </div>
                 <img class="imgBorder" src="SideOrderSmol.png">
                 <img class="imgBorder" src="SideOrderPearl.png">
                 <img class="imgBorder" src="SodaAttack.png">
                 <img class="imgBorder" src="SmolWithSword.PNG">
-                
+
             </div>
             <div class="column">
                 <img class="imgBorder" src="VoltPopsicle.png">
@@ -94,35 +94,37 @@
 
     </div>
     <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
+        document.addEventListener("DOMContentLoaded", (event) => {
+            function myFunction() {
+                let x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
             }
-        }
 
-        // Get the modal
-        var modal = document.getElementById("myModal");
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            let imgs = document.getElementsByClassName("imgBorder"),
+                modals = document.getElementsByClassName("modal"),
+                modalImgs = document.getElementsByClassName("modal-content"),
+                captionTexts = document.getElementsByClassName("caption");
+            for (let x = 0; x < imgs.length; x++) {
+                imgs[x].onclick = function () {
+                    console.log(this);
+                    modals[x].style.display = "block";
+                    modalImgs[x].src = this.src;
+                    captionTexts[x].innerHTML = this.alt;
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementsByClassName("myImg");
-        // var modalImg = document.getElementsByClassName("img");
-        // var captionText = document.getElementsByClassName("caption");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
+                    let closeSpans = document.getElementsByClassName("close");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
+                    // When the user clicks on <span> (x), close the modal
+                    closeSpans[x].onclick = function () {
+                        modals[x].style.display = "none";
+                    }
+                }
+            }
+        });
     </script>
 
 </body>
