@@ -154,16 +154,15 @@
 
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            function myFunction() {
-                let x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
             }
-
+        }
+        document.addEventListener("DOMContentLoaded", (event) => {
             // Get the image and insert it inside the modal - use its "alt" text as a caption
             let imgs = document.getElementsByClassName("imgBorder"),
                 modals = document.getElementsByClassName("modal"),

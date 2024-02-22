@@ -2,6 +2,7 @@ h1 {
   color: #540804;
   text-align: center;
   font-family: 'Amarante';
+
 }
 
 
@@ -11,7 +12,7 @@ p {
   margin: auto;
   text-align: center;
   font-family: 'Amarante';
-  font-size: 23px;
+  font-size: 16px;
   width: 60%;
   font-variant: inherit;
   font-variant-caps: petite-caps;
@@ -246,6 +247,9 @@ bottom Navbar */
   img {
     width: 75%;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   .imgSmaller{
@@ -271,6 +275,21 @@ bottom Navbar */
     height: 250px;
   
   }
+
+  p {
+    color: #540804;
+    opacity: 80%;
+    margin: auto;
+    text-align: center;
+    font-family: 'Amarante';
+    font-size: 23px;
+    width: 60%;
+    font-variant: inherit;
+    font-variant-caps: petite-caps;
+  }
+
+
+
 }
 
 /* The Modal (background) */
@@ -354,7 +373,10 @@ bottom Navbar */
 .imgBorder:hover {opacity: 0.7; cursor: pointer}
 
 .videoWidth{
-  width: 500px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* 100% Image Width on Smaller Screens */
